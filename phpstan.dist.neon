@@ -1,0 +1,19 @@
+includes:
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-symfony/rules.neon
+
+parameters:
+    level: 6
+    paths:
+        - bin/
+        - config/
+        - public/
+        - src/
+        - tests/
+    ignoreErrors:
+        # Symfony calls this private hook from its KernelTrait.
+        -
+            rawMessage: 'Method App\Kernel::getAllowedEnvs() is unused.'
+            identifier: method.unused
+            path: src/Kernel.php
+            count: 1
