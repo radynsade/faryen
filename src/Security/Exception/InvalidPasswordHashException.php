@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @author Nikita Prokopenko <radynje@gmail.com>
+ */
+
+declare(strict_types = 1);
+
+namespace App\Security\Exception;
+
+use InvalidArgumentException;
+use Throwable;
+
+class InvalidPasswordHashException extends InvalidArgumentException {
+	public function __construct(
+		private string $value,
+		int $code = 0,
+		?Throwable $previous = null,
+	) {
+		$message = "\"{$value}\" is not a password hash.";
+		parent::__construct($message, $code, $previous);
+	}
+
+	public function getValue(): string {
+		return $this->value;
+	}
+}

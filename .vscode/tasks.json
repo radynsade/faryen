@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Generate PHP getters",
+            "type": "process",
+            "command": "php",
+            "args": [
+                "${workspaceFolder}/bin/generate-getters.php",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
