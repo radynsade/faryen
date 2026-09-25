@@ -6,12 +6,12 @@
 
 declare(strict_types = 1);
 
-namespace App\Security\Exception;
+namespace App\Languages\Domain\Language\Exception;
 
 use InvalidArgumentException;
 use Throwable;
 
-class InvalidLanguageNativeNameException extends InvalidArgumentException {
+class InvalidNativeNameException extends InvalidArgumentException {
 	public function __construct(
 		private string $value,
 		int $code = 0,

@@ -8,12 +8,12 @@ declare(strict_types = 1);
 
 namespace App\Languages\Domain\Language;
 
-use App\Security\Exception\InvalidLanguageEnglishNameException;
+use App\Languages\Domain\Language\Exception\InvalidEnglishNameException;
 
 class EnglishName {
 	public function __construct(private string $value) {
 		if (mb_strlen($value) > 50) {
-			throw new InvalidLanguageEnglishNameException($value);
+			throw new InvalidEnglishNameException($value);
 		}
 	}
 

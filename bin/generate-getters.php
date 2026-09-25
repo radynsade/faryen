@@ -15,12 +15,13 @@ use PhpParser\ParserFactory;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-if ($argc !== 2 || !is_file($argv[1])) {
+$arguments = $_SERVER['argv'] ?? [];
+if (count($arguments) !== 2 || !is_file($arguments[1])) {
 	fwrite(STDERR, "Usage: php bin/generate-getters.php <php-file>\n");
 	exit(1);
 }
 
-$file = $argv[1];
+$file = $arguments[1];
 $source = file_get_contents($file);
 if ($source === false) {
 	fwrite(STDERR, "Cannot read {$file}\n");

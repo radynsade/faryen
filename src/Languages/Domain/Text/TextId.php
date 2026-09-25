@@ -6,15 +6,10 @@
 
 declare(strict_types = 1);
 
-namespace App\Languages\Domain\Language;
+namespace App\Languages\Domain\Text;
 
-use App\Languages\Domain\Language\Exception\InvalidNativeNameException;
-
-class NativeName {
+class TextId {
 	public function __construct(private string $value) {
-		if (mb_strlen($value) > 50) {
-			throw new InvalidNativeNameException($value);
-		}
 	}
 
 	public function getValue(): string {

@@ -14,6 +14,6 @@ class RegisterUser {
 		string $phone,
 		string $firstName,
 		string $lastName,
-	) {
+	): void {
 	}
 }

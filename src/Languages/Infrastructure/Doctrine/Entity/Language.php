@@ -6,9 +6,9 @@
 
 declare(strict_types = 1);
 
-namespace App\Entity;
+namespace App\Languages\Infrastructure\Doctrine\Entity;
 
-use App\Repository\LanguageRepository;
+use App\Languages\Infrastructure\Doctrine\Repository\LanguageRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LanguageRepository::class)]
@@ -37,7 +37,6 @@ class Language {
 
 	public function setCode(string $code): static {
 		$this->code = $code;
-
 		return $this;
 	}
 
@@ -47,7 +46,6 @@ class Language {
 
 	public function setEnglishName(string $englishName): static {
 		$this->englishName = $englishName;
-
 		return $this;
 	}
 
@@ -57,7 +55,6 @@ class Language {
 
 	public function setNativeName(string $nativeName): static {
 		$this->nativeName = $nativeName;
-
 		return $this;
 	}
 }
